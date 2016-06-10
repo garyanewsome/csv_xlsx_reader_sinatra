@@ -1,0 +1,5 @@
+# Notes.txt
+
+gem install sinatra
+gem install sinatra-contrib
+
