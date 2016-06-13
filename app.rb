@@ -9,8 +9,6 @@ array_sliced = arr_of_arrs.each_slice(1).to_a
 
 get '/' do
 
-puts arr_of_arrs
-
 @title = 'Health Payer Processor'
 @array = array_sliced
 erb :index
