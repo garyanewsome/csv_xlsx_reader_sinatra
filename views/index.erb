@@ -4,12 +4,16 @@
     <meta charset='UTF-8' />
     <title>Health Payer Processor</title>
   </head>
-  <body class='container'>
+  <body>
     <h1><%= @title %></h1>
     <p>Please check your terminal...</p>
-    <p><%= @array %>
-      
-    </p>
+    <ul>
+        <% @array.each do |id, fname, lname, pos| %>
+          <li>
+            <%= id %> <%= fname %> <%= lname %> <%= pos %>
+          </li>
+        <% end %>
+    </ul>
       
   </body>
 </html>
