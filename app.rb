@@ -2,15 +2,26 @@
 
 require 'sinatra'
 require "sinatra/reloader"
-require 'csv'
+require './csv_reader'
+require './xlsx_reader'
 
-arr_of_arrs = CSV.read("savvy.csv")
-array_sliced = arr_of_arrs.each_slice(1).to_a
+arrays = []
+file = 'savvy.csv'
+fileToo = 'savvy.xlsx'
+
+CSVReader.test_read
+XLSXReader.test_read
 
 get '/' do
+	reader = CSVReader.new(file)
+	reader.read
 
-@title = 'Health Payer Processor'
-@array = array_sliced
-erb :index
+	xlsx = XLSXReader.new(fileToo)
+	xlsx.read
+	
+	@title = 'Health Payer Processor'
+	@arrays = reader.arrays
+
+	erb :index
 
 end
