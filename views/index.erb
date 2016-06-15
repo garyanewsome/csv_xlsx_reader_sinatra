@@ -3,16 +3,22 @@
   <head>
     <meta charset='UTF-8' />
     <title>Health Payer Processor</title>
+    <style>
+      td{padding: 8px;}
+    </style>
   </head>
   <body>
     <h1><%= @title %></h1>
-    <ul>
+    <table border="1">
         <% @arrays.each do |id, fname, lname, pos| %>
-          <li>
-            <%= id %> <%= fname %> <%= lname %> <%= pos %>
-          </li>
+          <tr>
+            <td><%= id %></td>
+            <td><%= fname %></td>
+            <td><%= lname %></td>
+            <td><%= pos %></td>
+          </tr>
         <% end %>
-    </ul>
+    </table>
       
   </body>
 </html>
