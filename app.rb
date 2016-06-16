@@ -5,22 +5,24 @@ require "sinatra/reloader"
 require './csv_reader'
 require './xlsx_reader'
 
-arrays = []
-file = 'savvy.csv'
-fileToo = 'savvy.xlsx'
+csv_arrays = []
+xlsx_arrays = []
+csv_file = 'savvy.csv'
+xlsx_file = 'savvy.xlsx'
 
 CSVReader.test_read
 XLSXReader.test_read
 
 get '/' do
-	reader = CSVReader.new(file)
-	reader.read
+	csv_reader = CSVReader.new(csv_file)
+	csv_reader.read
 
-	xlsx = XLSXReader.new(fileToo)
-	xlsx.read
+	xlsx_reader = XLSXReader.new(xlsx_file)
+	xlsx_reader.read
 	
 	@title = 'Health Payer Processor'
-	@arrays = reader.arrays
+	@csv_arrays = csv_reader.arrays
+  @xlsx_arrays = xlsx_reader.arrays
 
 	erb :index
 

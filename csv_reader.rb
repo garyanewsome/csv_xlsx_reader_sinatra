@@ -20,7 +20,7 @@ class CSVReader
 		was_read.read
 		#arrays=was_read.instance_variable_get(:@arrays)
 		puts was_read.arrays.inspect
-		read_all = was_read.arrays.count == 5
+		read_all = was_read.arrays.count == 6
 		raise 'CSVReader FAILED test_read' unless read_all
 	end
 
