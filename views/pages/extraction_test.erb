@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='UTF-8' />
+    <title>Health Payer Processor</title>
+    <style>
+      td{padding: 8px;}
+    </style>
+  </head>
+  <body>
+    <h1><%= @title %></h1>
+    <h2>Extraction Test</h2>
+    <h3>CSV Table</h3>
+    <table border="1">
+        <% @csv_arrays.each do |id, fname, lname, pos| %>
+          <tr>
+            <td><%= id %></td>
+            <td><%= fname %></td>
+            <td><%= lname %></td>
+            <td><%= pos %></td>
+          </tr>
+        <% end %>
+    </table>
+    <h3>XLSX Table</h3>
+    <table border="1">
+        <% @xlsx_arrays.each do |id, fname, lname, pos| %>
+          <tr>
+            <td><%= id %></td>
+            <td><%= fname %></td>
+            <td><%= lname %></td>
+            <td><%= pos %></td>
+          </tr>
+        <% end %>
+    </table>  
+  </body>
+</html>

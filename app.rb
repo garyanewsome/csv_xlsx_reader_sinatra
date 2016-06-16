@@ -14,6 +14,22 @@ CSVReader.test_read
 XLSXReader.test_read
 
 get '/' do
+  @title = 'Health Payer Processor'
+  @link_1 = '<a href="/pages/extraction_test.erb">Extraction Demo</a>'
+
+  erb :index
+end  
+    
+# Handle POST-request (Receive and save the uploaded file)
+post "/" do 
+  File.open('uploads/' + params['myfile'][:filename], "w") do |f|
+    f.write(params['myfile'][:tempfile].read)
+  end
+  return "The file was successfully uploaded!"
+end
+
+
+get '/pages/extraction_test' do
 	csv_reader = CSVReader.new(csv_file)
 	csv_reader.read
 
@@ -21,9 +37,10 @@ get '/' do
 	xlsx_reader.read
 	
 	@title = 'Health Payer Processor'
+
 	@csv_arrays = csv_reader.arrays
   @xlsx_arrays = xlsx_reader.arrays
 
-	erb :index
+	erb :extraction_test
 
 end
