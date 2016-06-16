@@ -19,7 +19,7 @@ class XLSXReader
 		was_read = XLSXReader.new('savvy.xlsx')
 		was_read.read
 		puts was_read.arrays.inspect
-		read_all = was_read.arrays.count == 5
+		read_all = was_read.arrays.count == 6
 		raise 'EXCEL FAILED test_read' unless read_all
 	end
 
