@@ -33,8 +33,8 @@ end
 # Handle POST-request (Receive and save the uploaded file)
 post "/" do
 
-  File.open('uploads/' + params['myfile'][:filename], "w") do |f|
-    f.write(params['myfile'][:tempfile].read)
+  File.open('uploads/' + params['uploadfile'][:filename], "w") do |f|
+    f.write(params['uploadfile'][:tempfile].read)
   end
   return "The file was successfully uploaded!"
 

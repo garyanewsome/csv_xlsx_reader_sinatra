@@ -9,19 +9,13 @@
   </head>
   <body>
     <h1><%= @title %></h1>
-    <h2>Open File Test</h2>
-    <form method="post" enctype="multipart/form-data">
-      <input type="openfile" name="openmyfile"><br>
-      <input type="submit" value="Open File">
-    </form>
-    <h3>Output Open File</h3>
-    <hr>
     
     <h2>File Upload Test</h2>
     <form method="post" enctype="multipart/form-data">
-      <input type="file" name="myfile"><br>
+      <input type="file" name="uploadfile"><br>
       <input type="submit" value="Upload">
     </form>
+
     <h2>Extraction Test</h2>
     <h3>CSV Table</h3>
     <table border="1">
@@ -34,6 +28,7 @@
           </tr>
         <% end %>
     </table>
+
     <h3>XLSX Table</h3>
     <table border="1">
         <% @xlsx_arrays.each do |id, fname, lname, pos| %>
@@ -44,6 +39,7 @@
             <td><%= pos %></td>
           </tr>
         <% end %>
-    </table>  
+    </table>
+
   </body>
 </html>
