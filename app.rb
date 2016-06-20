@@ -14,6 +14,7 @@ CSVReader.test_read
 XLSXReader.test_read
 
 get '/' do
+
   csv_reader = CSVReader.new(csv_file)
   csv_reader.read
 
@@ -30,9 +31,11 @@ get '/' do
 end
     
 # Handle POST-request (Receive and save the uploaded file)
-post "/" do 
+post "/" do
+
   File.open('uploads/' + params['myfile'][:filename], "w") do |f|
     f.write(params['myfile'][:tempfile].read)
   end
   return "The file was successfully uploaded!"
+
 end

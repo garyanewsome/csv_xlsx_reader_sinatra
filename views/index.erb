@@ -9,6 +9,14 @@
   </head>
   <body>
     <h1><%= @title %></h1>
+    <h2>Open File Test</h2>
+    <form method="post" enctype="multipart/form-data">
+      <input type="openfile" name="openmyfile"><br>
+      <input type="submit" value="Open File">
+    </form>
+    <h3>Output Open File</h3>
+    <hr>
+    
     <h2>File Upload Test</h2>
     <form method="post" enctype="multipart/form-data">
       <input type="file" name="myfile"><br>
